@@ -22,7 +22,7 @@ ready = function() {
     /*$('#autocomplete').focus(function() {
         geolocate();
     });*/
-    create_and_show_numpad();
+    /*create_and_show_numpad();
 
     function create_and_show_numpad() {
         const numbers = "123456789";
@@ -78,7 +78,7 @@ ready = function() {
                 $('#download').attr('disabled', true).addClass('transparent-button');
             }
         });
-    }
+    }*/
 }
 
 $(document).on('turbolinks:load', ready);
