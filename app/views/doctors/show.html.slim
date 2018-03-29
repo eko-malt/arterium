@@ -1,0 +1,22 @@
+br
+h2.center = @doctor.first_name
+h2.center = @doctor.second_name
+.row.thank_you_info
+  br
+  br
+  br
+  h3.center = t('thank_you')
+  br
+  br
+  br
+  //.col.s4.center
+    = button_tag t('form.print'), type: 'button', class: 'waves-effect waves-green btn-large', id: 'print_button'
+  .row
+    .col.s12.center
+      = link_to t('member.edit'), edit_doctor_path(@doctor), class: 'waves-effect waves-green btn-large'
+  br
+  br
+  br
+  .row
+    .col.s12.center
+      = link_to t('member.new'), new_doctor_path, class: 'waves-effect waves-green btn-large'

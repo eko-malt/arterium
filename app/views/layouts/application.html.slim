@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+    title = t('registration')
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'https://fonts.googleapis.com/icon?family=Material+Icons', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    .main
+      = yield
+        //= javascript_include_tag src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAySn1nlL2SXzWqQTMZZ7qEbk-tnb_-cZ0&libraries=places&callback=initAutocomplete'

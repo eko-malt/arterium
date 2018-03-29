@@ -1,0 +1,136 @@
+@import 'jquery.ml-keyboard.css';
+@import 'materialize/components/color';
+$primary-color: color('blue', 'lighten-2') !default;
+$secondary-color: color('teal', 'lighten-2') !default;
+@import 'materialize';
+
+input[type=number] { -moz-appearance:textfield; }
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  margin: 0 auto;
+  background-color: #f3efef;
+}
+
+.body-container {
+  max-height: calc(100vh - 330px);
+  overflow: auto;
+}
+
+.img_pd { padding: 50px; }
+
+.bg {
+  margin-top: 150px;
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  opacity: 0.15;
+}
+
+#mlkeyboard-tab {
+  visibility: hidden;
+  margin-left: -2% !important;
+}
+#mlkeyboard-capslock {
+  visibility: hidden;
+  margin-left: 1% !important;
+}
+#mlkeyboard-return { visibility: hidden; }
+#mlkeyboard-left-shift {
+  margin-left: 3% !important;
+}
+
+.input-field label:not(.label-icon).active {
+  transform: translateY(-25px) scale(0.8) !important;
+}
+
+input[type=text] {
+  font-size: 2rem;
+}
+
+.input-field label {
+  margin-left: 5px;
+  font-size: 19px !important;
+}
+
+.new_member {
+  border: 2px solid #4db6ac;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.main-page {
+  border: 2px solid #4db6ac;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.org_img img {
+  width: 300px;
+}
+
+.print_name {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+@media print {
+  .thank_you_info { display: none; }
+  .print_top_margin {
+    margin-top: 150px;
+    border-bottom: 1px solid #f7f7f7;
+  }
+  .print_name { margin-left: -4 0px; }
+}
+
+.select-dropdown {
+  color: #9e9e9e;
+  padding-left: 5px !important;
+  font-size: 19px !important;
+}
+
+.error-block {
+  color: red;
+  top: -20px;
+  position: relative;
+}
+
+
+
+/* numpad */
+
+span#number2dial {
+  font-size: 1.8em;
+  padding: 10px 15px;
+  margin: 40px 0 0 0;
+}
+
+div.numpad-container {
+  width: 250px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 10px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+button.numpad, .backspace {
+  height: 75px;
+  width: 75px;
+  background: #48535a;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  color: #fff;
+  will-change: background;
+  transition: all .2s ease-in;
+  font-size: 1.5em;
+}
+
+.disabled { display: none; }

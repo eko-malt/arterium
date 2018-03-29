@@ -1,0 +1,21 @@
+tr id="member_#{member.id}"
+  td = member.id
+  td = "#{member.first_name} #{member.second_name}"
+  td = member.phone
+  td
+    = member.company
+    br
+    = member.address
+    br
+    = "#{member.area} #{t('form.ga')}"
+    br
+    = member.edrpou
+  td = member.position
+  td = member.manager
+  td
+    = link_to edit_member_path(member.id)
+      i.material-icons edit
+    = link_to member_path(member.id), method: :delete, data: {confirm: t('form.confirm_delete')}
+      i.material-icons delete
+    = link_to member_path(member.id)
+      i.material-icons receipt

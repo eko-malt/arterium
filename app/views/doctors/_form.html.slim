@@ -1,0 +1,18 @@
+= simple_form_for @doctor do |f|
+  .row
+    .col.s4 = f.input :first_name, label: t('doctor.first_name'), input_html: { class: 'ml_ukr' }
+    .col.s4 = f.input :second_name, label: t('doctor.second_name'), input_html: { class: 'ml_ukr' }
+    .col.s4 = f.input :middle_name, label: t('doctor.middle_name'), input_html: { class: 'ml_ukr' }
+  .row
+    .col.s4 = f.input :city, label: t('doctor.city'), input_html: { class: 'ml_ukr' }
+    .col.s4 = f.input :work, label: t('doctor.work'), input_html: { class: 'ml_ukr' }
+    .col.s4 = f.input :spec, label: t('doctor.spec'), input_html: { class: 'ml_ukr' }
+  .row
+    .col.s4 = f.input :phone, label: t('doctor.phone'), input_html: { class: 'dialpad' }
+    .col.s4 = f.input :console, label: t('doctor.console'), input_html: { class: 'dialpad' }
+    .col.s4 = f.input :email, label: t('doctor.email'), input_html: { class: 'ml_eng', type: :text }
+  .row
+    .col.s6 = f.input :club, collection: [['ацетонемічний синдром','1'], ['антиінфекційна резистентність ротоглотки','2'], ['підходи до антибіотикотерапії','3']], value_mathod: :first, label_mathod: :second, include_blank: t('doctor.club'), label: false, input_html: { class: 'ml_disable' }
+    .col.s4 = f.input :pharm, collection: ['LA ROCHE-POSAY', 'WORLD MEDICINE', 'АЛКАЛОИД', 'АЛЬПЕНФАРМА', 'АРТЕРИУМ', 'БИОКОДЕКС', 'БИОНОРИКА', 'ГЛЕНМАРК', 'ДЕЛЬТА МЕДИКАЛ', 'ЗДРАВО', 'КВЗ', 'САНОФИ-АВЕНСИС', 'ТЕВА', 'ФАРМАК', 'ЭББОТT', 'ЮРИЯ ФАРМ', 'ЯДРАН', 'Фармак', 'Асино', 'Сандоз', 'Др Редис', 'Мили', 'Бифарма', 'Биофарма', 'Юнифарм', 'Дилео Елена', 'Евролайф', 'Иннотек', 'Валеант', 'Берингер', 'інше'], include_blank: t('doctor.pharm'), label: false, input_html: { class: 'ml_disable' }
+    .col.s2 = f.submit t('form.save'), class: 'waves-effect waves-light btn-large'
+#numpad.disabled.numpad_target
