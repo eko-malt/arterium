@@ -1,12 +1,15 @@
 = simple_form_for @doctor do |f|
-  .row
+  .row.step1
     .col.s4 = f.input :first_name, label: t('doctor.first_name'), input_html: { class: 'ml_ukr' }
     .col.s4 = f.input :second_name, label: t('doctor.second_name'), input_html: { class: 'ml_ukr' }
     .col.s4 = f.input :middle_name, label: t('doctor.middle_name'), input_html: { class: 'ml_ukr' }
-  .row
+  .row.step2
+    .col.s3
+    .col.s6 = f.input :spec, label: t('doctor.spec'), input_html: { class: 'ml_ukr' }
+    .col.s3
+  .row.step3
     .col.s4 = f.input :city, label: t('doctor.city'), input_html: { class: 'ml_ukr' }
     .col.s4 = f.input :work, label: t('doctor.work'), input_html: { class: 'ml_ukr' }
-    .col.s4 = f.input :spec, label: t('doctor.spec'), input_html: { class: 'ml_ukr' }
   .row
     .col.s4 = f.input :phone, label: t('doctor.phone'), input_html: { class: 'dialpad' }
     .col.s4 = f.input :console, label: t('doctor.console'), input_html: { class: 'dialpad' }

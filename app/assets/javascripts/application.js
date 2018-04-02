@@ -19,9 +19,28 @@ ready = function() {
         window.print();
     });
     //$('#doctor_first_name').focus();
-    /*$('#autocomplete').focus(function() {
-        geolocate();
-    });*/
+    $('#doctor_city').focus(function() {
+            geolocate();
+    });
+
+
+    $('input[type=radio][name=spec_radio]').change(function() {
+        console.log(this.id);
+        if (this.id == 'test3') {
+            $('#doctor_spec_other').focus()
+        }
+    });
+
+    $('#test50').change(function() {
+        console.log(this.id);
+        if (this.id == 'test50') {
+            $('#doctor_indication_other').focus()
+        }
+    });
+
+
+
+
     /*create_and_show_numpad();
 
     function create_and_show_numpad() {
