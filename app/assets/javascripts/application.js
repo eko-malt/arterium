@@ -60,10 +60,35 @@ ready = function() {
     }
 
     $('#2to3').click(function() {
-        $('#step2').hide('slide',{direction:'left'},1000);
-
-        $('#step3').show('slide',{direction:'right'},1000);
+        $('#step2').hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step3').show('slide',{direction:'right'},500);}, 200);
     });
+
+    $('#3to4').click(function() {
+        $('#step3').hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step4').show('slide',{direction:'right'},500);}, 200);
+    });
+
+    $('#4to5').click(function() {
+        $('#step4').hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step5').show('slide',{direction:'right'},500);}, 200);
+    });
+
+    $('#5to6').click(function() {
+        $('#step5').hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step6').show('slide',{direction:'right'},500);}, 200);
+    });
+
+    $('#6to7').click(function() {
+        $('#step6').hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step7').show('slide',{direction:'right'},500);}, 200);
+    });
+
+    $('#7to8').click(function() {
+        $('#step7').hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step8').show('slide',{direction:'right'},500);}, 200);
+    });
+
 
     /*create_and_show_numpad();
 

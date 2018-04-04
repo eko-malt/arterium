@@ -5,7 +5,7 @@
       .col.s4 = f.input :f_name, label: t('doctor.first_name'), input_html: { class: 'ml_ukr' }
       .col.s4 = f.input :m_name, label: t('doctor.middle_name'), input_html: { class: 'ml_ukr' }
     .row
-      .col.s12 = button_tag t('form.next_step'), type: :button, id: '2to3', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step3' }
+      .col.s12 = button_tag t('form.next_step'), type: :button, type: :button, id: '2to3', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step3' }
   .block_form#step3
     .row
       h4 = t('form.step3')
@@ -24,14 +24,14 @@
             //<input class="string optional ml_ukr" type="text" name="doctor[city]" id="doctor_city" placeholder="Інше">
           </label>
     .row
-      .col.s12 = button_tag t('form.next_answer'), id: '3to4', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step4' }
+      .col.s12 = button_tag t('form.next_answer'), type: :button, id: '3to4', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step4' }
   .block_form#step4
     .row
       .col.s3
       .col.s6 = f.input :city, label: t('doctor.city'), input_html: { class: 'ml_ukr' }
       .col.s3
     .row
-      .col.s12 = button_tag t('form.next_step'), id: '4to5', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step5' }
+      .col.s12 = button_tag t('form.next_step'), type: :button, id: '4to5', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step5' }
   .block_form#step5
     .row
       h4 = t('form.step5')
@@ -49,7 +49,7 @@
     //.row
       .col.s4 = f.input :mediatorn, as: :radio_buttons, collection: ['Іпідакрину гідрохлориду', 'Цитиколіну', 'Холіну альфосцерат'], label: false
     .row
-      .col.s12 = button_tag t('form.next_answer'), id: '5to6', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step6' }
+      .col.s12 = button_tag t('form.next_answer'), type: :button, id: '5to6', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step6' }
   .block_form#step6
     .row
       h4 = t('form.step6')
@@ -67,7 +67,7 @@
     //.row
       .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром''язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row
-      .col.s12 = button_tag t('form.next_answer'),  id: '6to7', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step7' }
+      .col.s12 = button_tag t('form.next_answer'), type: :button,  id: '6to7', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step7' }
   .block_form#step7
     .row
       h4 = t('form.step7')
@@ -87,7 +87,7 @@
           <label for="step7_effect4">Рухові порушення внаслідок органічних уражень ЦНС</label>
         //.col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row
-      .col.s12 = button_tag t('form.next_answer'),  id: '7to8', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step8' }
+      .col.s12 = button_tag t('form.next_answer'), type: :button,  id: '7to8', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step8' }
   .block_form#step8
     .row
       h4 = t('form.step8')

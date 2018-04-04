@@ -31,6 +31,12 @@ body {
 }
 
 #step3, #step4, #step5, #step6, #step7, #step8 { display: none; }
+.block_form {
+  position: absolute;
+  top: 200px;
+  width: 73%;
+  padding: 20px;
+}
 
 .doctor_spec_other { margin-top: -14px; }
 
