@@ -30,6 +30,8 @@ body {
   opacity: 0.15;
 }
 
+#step3, #step4, #step5, #step6, #step7, #step8 { display: none; }
+
 .doctor_spec_other { margin-top: -14px; }
 
 #mlkeyboard-tab {
@@ -58,7 +60,7 @@ input[type=text] {
 }
 
 .block_form {
-  border-bottom: 1px solid #909090;
+
 }
 
 .input-field label {
@@ -143,7 +145,8 @@ button.numpad, .backspace {
 }
 
 .disabled { display: none; }
-
+.green_text { color: #6FDA54; }
+.red_text { color: #B00100; }
 
 /*
  *

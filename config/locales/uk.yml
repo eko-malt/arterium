@@ -36,7 +36,8 @@ uk:
     spec_other: 'Інший варіант'
     indication_other: 'Ваш варіант'
   form:
-    next_step: 'Наступний крок'
+    next_step: 'Далі'
+    next_answer: 'Відповісти'
     save: 'Зберегти'
     edit: 'Редагувати'
     delete: 'Видалити'

@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require turbolinks
@@ -18,28 +19,51 @@ ready = function() {
     $('#print_button').click(function () {
         window.print();
     });
-    //$('#doctor_first_name').focus();
     $('#doctor_city').focus(function() {
             geolocate();
     });
 
-
-    $('input[type=radio][name=spec_radio]').change(function() {
-        console.log(this.id);
-        if (this.id == 'test3') {
-            $('#doctor_spec_other').focus()
-        }
+    // set focus to input when check "Other" radio
+    $('input[name=step3_spec]').change(function() {
+        if (this.id === 'spec_3') { $('#doctor_spec_other').focus() }
     });
 
-    $('#test50').change(function() {
-        console.log(this.id);
-        if (this.id == 'test50') {
-            $('#doctor_indication_other').focus()
-        }
+    // set "Other" radio when focused on Other input
+    $('#doctor_spec_other').focusin(function() {
+        $('#spec_3').prop('checked', true);
     });
 
+    $('input[name=step5_mediatorn]').change(function() {
+        console.log('step5');
+        $('label[for=mediatorn_this_is_1]').removeClass('green_text');
+        $('label[for=mediatorn_this_is_2]').removeClass('red_text');
+        $('label[for=mediatorn_this_is_3]').removeClass('red_text');
+        if (this.id === 'mediatorn_this_is_1') { $('label[for=mediatorn_this_is_1]').addClass('green_text') }
+        if (this.id === 'mediatorn_this_is_2') { $('label[for=mediatorn_this_is_2]').addClass('red_text') }
+        if (this.id === 'mediatorn_this_is_3') { $('label[for=mediatorn_this_is_3]').addClass('red_text') }
+    });
 
+    $('#step6 input').change(function() {
+        correct_answer(this.id);
+    });
 
+    $('#step7 input').change(function() {
+        correct_answer(this.id);
+    });
+
+    function correct_answer(check_id) {
+        if ($('#' + check_id).prop('checked') === true) {
+            $('label[for=' + check_id + ']').addClass('green_text');
+        } else {
+            $('label[for=' + check_id + ']').removeClass('green_text');
+        }
+    }
+
+    $('#2to3').click(function() {
+        $('#step2').hide('slide',{direction:'left'},1000);
+
+        $('#step3').show('slide',{direction:'right'},1000);
+    });
 
     /*create_and_show_numpad();
 
