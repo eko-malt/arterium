@@ -1,9 +1,9 @@
 = image_tag 'bg.jpg', class: 'bg'
 
-.row.img_pd
-  = image_tag 'mediatorn_title.png', width: '400px'
-  = image_tag 'arterium.png', width: '400px', class: 'right'
+.row.img_pd.valign-wrapper
+  .col.s5.center = image_tag 'mediatorn_logo_blue_dark.png', width: '400px'
+  .col.s2
+  .col.s5.center = image_tag 'arterium.png', width: '400px'
 
-br
 .container
   = render 'form_full'

@@ -10,46 +10,61 @@ var ready;
 ready = function() {
     Materialize.updateTextFields();
     $('select').material_select();
-    $('.ml_ukr').mlKeyboard({
-        layout: 'ua_UK'
-    });
-    $('.ml_eng').mlKeyboard({
-        layout: 'en_US'
-    });
-    $('#print_button').click(function () {
-        window.print();
-    });
-    $('#doctor_city').focus(function() {
-            geolocate();
+    $('.ml_ukr').mlKeyboard({ layout: 'ua_UK' });
+    $('.ml_eng').mlKeyboard({ layout: 'en_US' });
+    //  $('#doctor_city').focus(function() { geolocate() });
+
+    $('input[name=spec]').change(function() {
+        if (this.id === 'spec_1') {
+            $('#spec_2').prop('checked', false);
+            $('#spec_3').prop('checked', false)
+        }
+        if (this.id === 'spec_2') {
+            $('#spec_1').prop('checked', false);
+            $('#spec_3').prop('checked', false)
+        }
+        if (this.id === 'spec_3') {
+            $('#spec_1').prop('checked', false);
+            $('#spec_2').prop('checked', false);
+            $('#doctor_spec_other').focus()
+        }
     });
 
-    // set focus to input when check "Other" radio
-    $('input[name=step3_spec]').change(function() {
-        if (this.id === 'spec_3') { $('#doctor_spec_other').focus() }
-    });
-
-    // set "Other" radio when focused on Other input
+    // set "Other" checkbox when focused on Other input
     $('#doctor_spec_other').focusin(function() {
+        $('#spec_1').prop('checked', false);
+        $('#spec_2').prop('checked', false);
         $('#spec_3').prop('checked', true);
     });
 
+    // set "Other" checkbox when focused on Other input
+    $('#doctor_indication_other').focusin(function() {
+        $('#step8_indication_5').prop('checked', true);
+    });
+
     $('input[name=step5_mediatorn]').change(function() {
-        console.log('step5');
         $('label[for=mediatorn_this_is_1]').removeClass('green_text');
         $('label[for=mediatorn_this_is_2]').removeClass('red_text');
         $('label[for=mediatorn_this_is_3]').removeClass('red_text');
-        if (this.id === 'mediatorn_this_is_1') { $('label[for=mediatorn_this_is_1]').addClass('green_text') }
-        if (this.id === 'mediatorn_this_is_2') { $('label[for=mediatorn_this_is_2]').addClass('red_text') }
-        if (this.id === 'mediatorn_this_is_3') { $('label[for=mediatorn_this_is_3]').addClass('red_text') }
+        if (this.id === 'mediatorn_this_is_1') {
+            $('label[for=mediatorn_this_is_1]').addClass('green_text');
+            $('#mediatorn_this_is_2').prop('checked', false);
+            $('#mediatorn_this_is_3').prop('checked', false)
+        }
+        if (this.id === 'mediatorn_this_is_2') {
+            $('label[for=mediatorn_this_is_2]').addClass('red_text');
+            $('#mediatorn_this_is_1').prop('checked', false);
+            $('#mediatorn_this_is_3').prop('checked', false)
+        }
+        if (this.id === 'mediatorn_this_is_3') {
+            $('label[for=mediatorn_this_is_3]').addClass('red_text');
+            $('#mediatorn_this_is_1').prop('checked', false);
+            $('#mediatorn_this_is_2').prop('checked', false)
+        }
     });
 
-    $('#step6 input').change(function() {
-        correct_answer(this.id);
-    });
-
-    $('#step7 input').change(function() {
-        correct_answer(this.id);
-    });
+    $('#step6 input').change(function() { correct_answer(this.id) });
+    $('#step7 input').change(function() { correct_answer(this.id) });
 
     function correct_answer(check_id) {
         if ($('#' + check_id).prop('checked') === true) {
@@ -59,36 +74,109 @@ ready = function() {
         }
     }
 
+    function go_to(step) {
+        $('#step' + (step-1)).hide('slide',{direction:'left'},700);
+        setTimeout(function(){ $('#step' + step).show('slide',{direction:'right'},500);}, 200);
+    }
+
+    // name to specialization
     $('#2to3').click(function() {
-        $('#step2').hide('slide',{direction:'left'},700);
-        setTimeout(function(){ $('#step3').show('slide',{direction:'right'},500);}, 200);
+        if (($('#doctor_s_name').val().length > 3) && ($('#doctor_f_name').val().length > 3)) {
+            go_to(3)
+        } else {
+            swal("Необхідно ввести ім''я та прізвище")
+        }
     });
 
+    // spec to city
     $('#3to4').click(function() {
-        $('#step3').hide('slide',{direction:'left'},700);
-        setTimeout(function(){ $('#step4').show('slide',{direction:'right'},500);}, 200);
+        if ($('#spec_3').prop('checked') == true) {
+            if ($('#doctor_spec_other').val().length > 3) {
+                go_to(4);
+            } else {
+                swal("Необхідно ввести спеціальність")
+            }
+        } else {
+            if (($('#spec_1').prop('checked') == true) || ($('#spec_2').prop('checked') == true)) {
+                go_to(4)
+            } else {
+                swal("Необхідно обрати або ввести спеціальність")
+            }
+        }
     });
 
+    // city to this is
     $('#4to5').click(function() {
-        $('#step4').hide('slide',{direction:'left'},700);
-        setTimeout(function(){ $('#step5').show('slide',{direction:'right'},500);}, 200);
+        if ($('#doctor_city').val().length > 3) {
+            go_to(5)
+        } else {
+            swal("Необхідно ввести місто")
+        }
     });
 
+    // this is to effects
     $('#5to6').click(function() {
-        $('#step5').hide('slide',{direction:'left'},700);
-        setTimeout(function(){ $('#step6').show('slide',{direction:'right'},500);}, 200);
+        if ($('#mediatorn_this_is_1').prop('checked') == true) {
+            go_to(6)
+        } else {
+            swal('Медіаторн – це препарат іпідакрину гідрохлориду.').then((value) => {
+                $('label[for=mediatorn_this_is_1]').addClass('green_text');
+                $('label[for=mediatorn_this_is_2]').removeClass('red_text');
+                $('label[for=mediatorn_this_is_3]').removeClass('red_text');
+                $('#mediatorn_this_is_1').prop('checked', true);
+                $('#mediatorn_this_is_2').prop('checked', false);
+                $('#mediatorn_this_is_3').prop('checked', false)
+            });
+        }
     });
 
+    // effects to indications
     $('#6to7').click(function() {
-        $('#step6').hide('slide',{direction:'left'},700);
-        setTimeout(function(){ $('#step7').show('slide',{direction:'right'},500);}, 200);
+        if (($('#step6_effect_1').prop('checked') == true) && ($('#step6_effect_2').prop('checked') == true) && ($('#step6_effect_3').prop('checked') == true)) {
+            go_to(7)
+        } else {
+            swal('Медіаторн має всі три вказані клінічні ефекти.').then((value) => {
+                $('label[for=step6_effect_1]').addClass('green_text');
+                $('label[for=step6_effect_2]').addClass('green_text');
+                $('label[for=step6_effect_3]').addClass('green_text');
+                $('#step6_effect_1').prop('checked', true);
+                $('#step6_effect_2').prop('checked', true);
+                $('#step6_effect_3').prop('checked', true)
+            });
+        }
     });
 
+    // indications to your indications
     $('#7to8').click(function() {
-        $('#step7').hide('slide',{direction:'left'},700);
-        setTimeout(function(){ $('#step8').show('slide',{direction:'right'},500);}, 200);
+        if (($('#step7_indication_1').prop('checked') == true) && ($('#step7_indication_2').prop('checked') == true) && ($('#step7_indication_3').prop('checked') == true) && ($('#step7_indication_1').prop('checked') == true)) {
+            go_to(8)
+        } else {
+            swal('Всі вказані показання є підставою для призначення Медіаторну.').then((value) => {
+                $('label[for=step7_indication_1]').addClass('green_text');
+                $('label[for=step7_indication_2]').addClass('green_text');
+                $('label[for=step7_indication_3]').addClass('green_text');
+                $('label[for=step7_indication_4]').addClass('green_text');
+                $('#step7_indication_1').prop('checked', true);
+                $('#step7_indication_2').prop('checked', true);
+                $('#step7_indication_3').prop('checked', true)
+                $('#step7_indication_4').prop('checked', true)
+            });
+        }
     });
 
+    $('#new_doctor').submit(function() {
+        if ($('#spec_1').prop('checked') == true) { $('#doctor_spec').val('Невролог стаціонару'); }
+        if ($('#spec_2').prop('checked') == true) { $('#doctor_spec').val('Невролог поліклініки'); }
+        if ($('#spec_3').prop('checked') == true) { $('#doctor_spec').val($('#doctor_spec_other').val()); }
+
+        if ($('#step8_indication_1').prop('checked') == true) { $('#doctor_your_indication').val($('#doctor_your_indication').val() + 'Моно- і полінейропатії, полірадикулопатії різної етіології; '); }
+        if ($('#step8_indication_2').prop('checked') == true) { $('#doctor_your_indication').val($('#doctor_your_indication').val() + 'Міастенія та міастенічний синдром; '); }
+        if ($('#step8_indication_3').prop('checked') == true) { $('#doctor_your_indication').val($('#doctor_your_indication').val() + 'Ураження ЦНС, бульбарні порушення; '); }
+        if ($('#step8_indication_4').prop('checked') == true) { $('#doctor_your_indication').val($('#doctor_your_indication').val() + 'Рухові порушення внаслідок органічних уражень ЦНС; '); }
+        if ($('#step8_indication_4').prop('checked') == true) { $('#doctor_your_indication').val($('#doctor_your_indication').val() + $('#doctor_indication_other').val()) }
+
+        return true;
+    });
 
     /*create_and_show_numpad();
 
@@ -169,14 +257,12 @@ var componentForm = {
 };
 
 function initAutocomplete() {
-    // Create the autocomplete object, restricting the search to geographical
-    // location types.
+    // Create the autocomplete object, restricting the search to geographical location types.
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
         {types: ['geocode']});
 
-    // When the user selects an address from the dropdown, populate the address
-    // fields in the form.
+    // When the user selects an address from the dropdown, populate the address fields in the form.
     autocomplete.addListener('place_changed', fillInAddress);
 }
 

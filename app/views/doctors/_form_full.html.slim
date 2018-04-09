@@ -12,23 +12,24 @@
     .row
       .col.s12
         .row
-          input#spec_1 name="step3_spec" type="radio"
-          <label for="spec_1">Невролог стаціонару</label>
+          input#spec_1 type="checkbox" name="spec"
+          label for="spec_1"
+            |Невролог стаціонару
         .row
-          input#spec_2 name="step3_spec" type="radio"
-          <label for="spec_2">Невролог поліклініки</label>
+          input#spec_2 type="checkbox" name="spec"
+          label for="spec_2"
+            |Невролог поліклініки
         .row
-          input#spec_3 name="step3_spec" type="radio"
-          <label for="spec_3">
+          input#spec_3 type="checkbox" name="spec"
+          label for="spec_3"
             = f.input :spec_other, label: false, placeholder: t('doctor.spec_other'), input_html: { class: 'ml_ukr' }
-            //<input class="string optional ml_ukr" type="text" name="doctor[city]" id="doctor_city" placeholder="Інше">
-          </label>
+            = f.hidden_field :spec
     .row
       .col.s12 = button_tag t('form.next_answer'), type: :button, id: '3to4', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step4' }
   .block_form#step4
     .row
       .col.s3
-      .col.s6 = f.input :city, label: t('doctor.city'), input_html: { class: 'ml_ukr' }
+      .col.s6 = f.input :city, label: t('doctor.city'), placeholder: '', input_html: { class: 'ml_ukr' }
       .col.s3
     .row
       .col.s12 = button_tag t('form.next_step'), type: :button, id: '4to5', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step5' }
@@ -38,14 +39,17 @@
     .row
       .col.s12
         .row
-          <input name="step5_mediatorn" type="radio" id="mediatorn_this_is_1" />
-          <label for="mediatorn_this_is_1">Іпідакрину гідрохлориду</label>
+          input#mediatorn_this_is_1 name="step5_mediatorn" type="checkbox"
+          label for="mediatorn_this_is_1"
+            |Іпідакрину гідрохлориду
         .row
-          <input name="step5_mediatorn" type="radio" id="mediatorn_this_is_2" />
-          <label for="mediatorn_this_is_2">Цитиколіну</label>
+          input#mediatorn_this_is_2 name="step5_mediatorn" type="checkbox"
+          label for="mediatorn_this_is_2"
+            |Цитиколіну
         .row
-          <input name="step5_mediatorn" type="radio" id="mediatorn_this_is_3" />
-          <label for="mediatorn_this_is_3">Холіну альфосцерат</label>
+          input#mediatorn_this_is_3 name="step5_mediatorn" type="checkbox"
+          label for="mediatorn_this_is_3"
+            |Холіну альфосцерат
     //.row
       .col.s4 = f.input :mediatorn, as: :radio_buttons, collection: ['Іпідакрину гідрохлориду', 'Цитиколіну', 'Холіну альфосцерат'], label: false
     .row
@@ -55,15 +59,18 @@
       h4 = t('form.step6')
     .row
       .col.s12
-        p
-          <input type="checkbox" id="step6_effect_1" />
-          <label for="step6_effect_1">Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром'язеву передачу</label>
-        p
-          <input type="checkbox" id="step6_effect_2" />
-          <label for="step6_effect_2">Посилює скорочення гладкої мускулатури</label>
-        p
-          <input type="checkbox" id="step6_effect_3" />
-          <label for="step6_effect_3">Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків</label>
+        .row
+          input#step6_effect_1 type="checkbox"
+          label for="step6_effect_1"
+            |Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром'язеву передачу
+        .row
+          input#step6_effect_2 type="checkbox"
+          label for="step6_effect_2"
+            |Посилює скорочення гладкої мускулатури
+        .row
+          input#step6_effect_3 type="checkbox"
+          label for="step6_effect_3"
+            |Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків
     //.row
       .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром''язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row
@@ -73,18 +80,22 @@
       h4 = t('form.step7')
     .row
       .col.s12
-        p
-          input#step7_effect1 type="checkbox"
-          <label for="step7_effect1">Моно- і полінейропатії, полірадикулопатії різної етіології</label>
-        p
-          <input type="checkbox" id="step7_effect2" />
-          <label for="step7_effect2">Міастенія та міастенічний синдром</label>
-        p
-          <input type="checkbox" id="step7_effect3" />
-          <label for="step7_effect3">Ураження ЦНС, бульбарні порушення</label>
-        p
-          <input type="checkbox" id="step7_effect4" />
-          <label for="step7_effect4">Рухові порушення внаслідок органічних уражень ЦНС</label>
+        .row
+          input#step7_indication_1 type="checkbox"
+          label for="step7_indication_1"
+            |Моно- і полінейропатії, полірадикулопатії різної етіології
+        .row
+          input#step7_indication_2 type="checkbox"
+          label for="step7_indication_2"
+            |Міастенія та міастенічний синдром
+        .row
+          input#step7_indication_3 type="checkbox"
+          label for="step7_indication_3"
+            |Ураження ЦНС, бульбарні порушення
+        .row
+          input#step7_indication_4 type="checkbox"
+          label for="step7_indication_4"
+            |Рухові порушення внаслідок органічних уражень ЦНС
         //.col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row
       .col.s12 = button_tag t('form.next_answer'), type: :button,  id: '7to8', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step8' }
@@ -93,22 +104,27 @@
       h4 = t('form.step8')
     .row
       .col.s12
-        p
-          <input type="checkbox" id="test45" />
-          <label for="test45">Моно- і полінейропатії, полірадикулопатії різної етіології</label>
-        p
-          <input type="checkbox" id="test46" />
-          <label for="test46">Міастенія та міастенічний синдром</label>
-        p
-          <input type="checkbox" id="test48" />
-          <label for="test48">Ураження ЦНС, бульбарні порушення</label>
-        p
-          <input type="checkbox" id="test49" />
-          <label for="test49">Рухові порушення внаслідок органічних уражень ЦНС</label>
-        p
-          <input type="checkbox" id="test50" />
-          <label for="test50">Ваш варіант</label>
-          = f.input :indication_other, label: false, input_html: {class: 'ml_ukr'}, placeholder: t('doctor.indication_other')
+        .row
+          input#step8_indication_1 type="checkbox"
+          label for="step8_indication_1"
+            |Моно- і полінейропатії, полірадикулопатії різної етіології
+        .row
+          input#step8_indication_2 type="checkbox"
+          label for="step8_indication_2"
+            |Міастенія та міастенічний синдром
+        .row
+          input#step8_indication_3 type="checkbox"
+          label for="step8_indication_3"
+            |Ураження ЦНС, бульбарні порушення
+        .row
+          input#step8_indication_4 type="checkbox"
+          label for="step8_indication_4"
+            |Рухові порушення внаслідок органічних уражень ЦНС
+        .row
+          input#step8_indication_5 type="checkbox"
+          label for="step8_indication_5"
+            = f.input :indication_other, label: false, input_html: {class: 'ml_ukr'}, placeholder: t('doctor.indication_other')
+        = f.hidden_field :your_indication
         //.row
           .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     = f.submit t('form.save'), class: 'waves-effect waves-light btn-large right'
