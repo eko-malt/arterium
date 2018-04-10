@@ -62,11 +62,11 @@
         .row
           input#step6_effect_1 type="checkbox"
           label for="step6_effect_1"
-            |Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром'язеву передачу
+            |Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром'язову передачу
         .row
           input#step6_effect_2 type="checkbox"
           label for="step6_effect_2"
-            |Посилює скорочення гладкої мускулатури
+            |Підсилює скорочення гладкої мускулатури
         .row
           input#step6_effect_3 type="checkbox"
           label for="step6_effect_3"
@@ -127,4 +127,4 @@
         = f.hidden_field :your_indication
         //.row
           .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
-    = f.submit t('form.save'), class: 'waves-effect waves-light btn-large right'
+    = f.submit t('form.next_answer'), class: 'waves-effect waves-light btn-large right'
