@@ -12,6 +12,11 @@ ready = function() {
     $('select').material_select();
     $('.ml_ukr').mlKeyboard({ layout: 'ua_UK' });
     $('.ml_eng').mlKeyboard({ layout: 'en_US' });
+
+    if ($('.thank_you').length > 0) {
+        setTimeout(function(){ $('.thank_you').show('clip',1000);}, 5000);
+    }
+
     //  $('#doctor_city').focus(function() { geolocate() });
 
     $('input[name=spec]').change(function() {

@@ -10,14 +10,20 @@ input[type=number]::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="radio"] {
-  -webkit-appearance: checkbox; /* Chrome, Safari, Opera */
-  -moz-appearance: checkbox;    /* Firefox */
-}
-
 body {
   margin: 0 auto;
   background-color: #ffffff;
+}
+
+.main-page {
+  background-image: url('bg_start_full.jpg');
+  height: 768px;
+}
+
+.main-page a {
+  position: absolute;
+  right: 50px;
+  top: 50px;
 }
 
 .body-container {
@@ -35,7 +41,7 @@ body {
   opacity: 0.15;
 }
 
-#step3, #step4, #step5, #step6, #step7, #step8 { display: none; }
+#step3, #step4, #step5, #step6, #step7, #step8, .thank_you { display: none; }
 .block_form {
   position: absolute;
   top: 150px;
@@ -84,13 +90,6 @@ input[type=text] {
   padding: 20px;
 }
 
-.main-page {
-  border: 2px solid #4db6ac;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px;
-}
-
 .img-bottom {
   position: absolute;
   bottom: 0;
@@ -130,6 +129,17 @@ input[type=text] {
   position: relative;
 }
 
+.medi-img {
+  margin-top: -50px;
+}
+
+.thank_you {
+  position: absolute;
+  top: 160px;
+  height: 500px;
+  background: #ffffff;
+  padding: 125px;
+}
 
 
 /* numpad */

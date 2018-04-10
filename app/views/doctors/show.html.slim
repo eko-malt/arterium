@@ -1,20 +1,23 @@
 .row.img_pd.valign-wrapper
-  .col.s5.center = image_tag 'mediatorn_logo_blue_dark.png', width: '400px'
+  .col.s5.center = image_tag 'mediatorn_title_font.png', width: '430px'
   .col.s2
   .col.s5.center = image_tag 'arterium.png', width: '400px'
 
+.center.medi-img = image_tag 'mediatorn_box.png', width: '500px'
 .container
   h3.center.mediatorn-title Медіаторн -
   h3.center це ефективність оригінального іпідакрину
   h3.center за доступною ціною
 
-br
-h3.center = t('thank_you')
+.thank_you
+  h3.center = t('thank_you')
 
-br
-.row
-  .col.s12.center
-    = link_to t('to_main'), root_path, class: 'waves-effect waves-green btn-large'
+  br
+  br
+  br
+  .row
+    .col.s12.center
+      = link_to t('to_main'), root_path, class: 'waves-effect waves-green btn-large'
 
 = image_tag 'bottom-left.jpg', class: 'img-bottom img-bm-left'
 = image_tag 'bottom-right.jpg', class: 'img-bottom img-bm-right'
