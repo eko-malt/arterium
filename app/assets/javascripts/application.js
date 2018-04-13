@@ -23,6 +23,16 @@ ready = function() {
         }, 10000);
     }
 
+    $('#change_background').click(function() {
+       if ($('.main-page').hasClass('disabled')) {
+           $('.main-page2').addClass('disabled');
+           $('.main-page').removeClass('disabled');
+       } else {
+           $('.main-page').addClass('disabled');
+           $('.main-page2').removeClass('disabled');
+       }
+    });
+
     //  $('#doctor_city').focus(function() { geolocate() });
 
     $('input[name=spec]').change(function() {

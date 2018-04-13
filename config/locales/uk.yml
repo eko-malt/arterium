@@ -5,6 +5,7 @@ uk:
   thank_you1: 'Дякуємо Вам за участь'
   thank_you2: 'та бажаємо міцного здоров''я!'
   to_main: 'На головну'
+  switch_start: 'Змінити фон'
   member:
     create: 'Зареєструватися'
     first_name: 'Ім''я  '

@@ -18,16 +18,34 @@ body {
 .btn, .swal-button { background-color: #5090cd !important; }
 .btn:hover, .btn:focus { background-color: #7d7e82; }
 
-.main-page {
-  background-image: url('bg_dance.jpg');
+.main-page, .main-page2  {
   background-repeat: no-repeat;
   height: 768px;
+}
+
+.main-page {
+  background-image: url('bg_dance.jpg');
+}
+.main-page2 {
+  background-image: url('start2r.jpg');
 }
 
 .main-page a {
   position: absolute;
   right: 50px;
   top: 50px;
+}
+
+.main-page2 a {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+#change_background {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
 }
 
 .body-container {
