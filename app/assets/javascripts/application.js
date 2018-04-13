@@ -19,8 +19,8 @@ ready = function() {
             $('.thank_you').show();
             setTimeout(function() {
                 window.location.href = '/'
-            }, 5000)
-        }, 5000);
+            }, 10000)
+        }, 10000);
     }
 
     //  $('#doctor_city').focus(function() { geolocate() });

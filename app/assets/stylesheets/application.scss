@@ -1,6 +1,6 @@
 @import 'materialize/components/color';
-$primary-color: color('blue', 'lighten-2') !default;
-$secondary-color: color('teal', 'lighten-2') !default;
+$primary-color: #5090cd !default;
+$secondary-color: #5090cd !default;
 @import 'materialize';
 
 input[type=number] { -moz-appearance:textfield; }
@@ -15,7 +15,7 @@ body {
   background-color: #ffffff;
 }
 
-.btn { background-color: #5090cd; }
+.btn, .swal-button { background-color: #5090cd !important; }
 .btn:hover, .btn:focus { background-color: #7d7e82; }
 
 .main-page {
@@ -133,19 +133,23 @@ input[type=text] {
   position: relative;
 }
 
-.main-message { margin-top: 50px; }
+.main-message {
+  font-family: 'PT Sans', sans-serif;
+  font-style: italic;
+  //margin-top: 50px;
+}
+
 .medi-img {
   margin-top: 50px;
 }
 
 .thank_you {
-  position: absolute;
-  height: 700px;
-  //padding: 150px;
-  margin: 160px;
-  width: 1000px;
-}
+  font-family: 'PT Sans', sans-serif;
+  font-style: italic;
+  padding-top: 150px;
+  //margin: 160px;
 
+}
 
 /* numpad */
 
