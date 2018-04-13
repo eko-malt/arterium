@@ -15,6 +15,9 @@ body {
   background-color: #ffffff;
 }
 
+.btn { background-color: #5090cd; }
+.btn:hover, .btn:focus { background-color: #7d7e82; }
+
 .main-page {
   background-image: url('bg_dance.jpg');
   background-repeat: no-repeat;
@@ -42,7 +45,7 @@ body {
   opacity: 0.15;
 }
 
-#step3, #step4, #step5, #step6, #step7, #step8, .thank_you { display: none; }
+#step3, #step4, #step5, #step6, #step2, #step8, .thank_you { display: none; }
 .block_form {
   position: absolute;
   top: 150px;
@@ -130,16 +133,17 @@ input[type=text] {
   position: relative;
 }
 
+.main-message { margin-top: 50px; }
 .medi-img {
-  margin-top: -50px;
+  margin-top: 50px;
 }
 
 .thank_you {
   position: absolute;
-  top: 160px;
-  height: 500px;
-  background: #ffffff;
-  padding: 125px;
+  height: 700px;
+  //padding: 150px;
+  margin: 160px;
+  width: 1000px;
 }
 
 

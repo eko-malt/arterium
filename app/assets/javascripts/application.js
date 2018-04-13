@@ -14,7 +14,13 @@ ready = function() {
     $('.ml_eng').mlKeyboard({ layout: 'en_US' });
 
     if ($('.thank_you').length > 0) {
-        setTimeout(function(){ $('.thank_you').show('clip',1000);}, 5000);
+        setTimeout(function() {
+            $('.main-message').addClass('disabled');
+            $('.thank_you').show();
+            setTimeout(function() {
+                window.location.href = '/'
+            }, 5000)
+        }, 5000);
     }
 
     //  $('#doctor_city').focus(function() { geolocate() });
@@ -121,6 +127,11 @@ ready = function() {
 
     // this is to effects
     $('#5to6').click(function() {
+        if ($('#doctor_mediatorn').val() == '') {
+            if ($('#mediatorn_this_is_1').prop('checked') == true) { $('#doctor_mediatorn').val($('label[for=mediatorn_this_is_1]').html()); }
+            if ($('#mediatorn_this_is_2').prop('checked') == true) { $('#doctor_mediatorn').val($('label[for=mediatorn_this_is_2]').html()); }
+            if ($('#mediatorn_this_is_3').prop('checked') == true) { $('#doctor_mediatorn').val($('label[for=mediatorn_this_is_3]').html()); }
+        };
         if ($('#mediatorn_this_is_1').prop('checked') == true) {
             go_to(6)
         } else {
@@ -137,6 +148,11 @@ ready = function() {
 
     // effects to indications
     $('#6to7').click(function() {
+        if ($('#doctor_effects').val() == '') {
+            if ($('#step6_effect_1').prop('checked') == true) { $('#doctor_effects').val($('label[for=step6_effect_1]').html()); }
+            if ($('#step6_effect_2').prop('checked') == true) { $('#doctor_effects').val($('#doctor_effects').val() + '; ' + $('label[for=step6_effect_2]').html()); }
+            if ($('#step6_effect_3').prop('checked') == true) { $('#doctor_effects').val($('#doctor_effects').val() + '; ' + $('label[for=step6_effect_3]').html()); }
+        };
         if (($('#step6_effect_1').prop('checked') == true) && ($('#step6_effect_2').prop('checked') == true) && ($('#step6_effect_3').prop('checked') == true)) {
             go_to(7)
         } else {
@@ -153,6 +169,12 @@ ready = function() {
 
     // indications to your indications
     $('#7to8').click(function() {
+        if ($('#doctor_indication').val() == '') {
+            if ($('#step7_indication_1').prop('checked') == true) { $('#doctor_indication').val($('#doctor_indication').val() + 'Моно- і полінейропатії, полірадикулопатії різної етіології; '); }
+            if ($('#step7_indication_2').prop('checked') == true) { $('#doctor_indication').val($('#doctor_indication').val() + 'Міастенія та міастенічний синдром; '); }
+            if ($('#step7_indication_3').prop('checked') == true) { $('#doctor_indication').val($('#doctor_indication').val() + 'Ураження ЦНС, бульбарні порушення; '); }
+            if ($('#step7_indication_4').prop('checked') == true) { $('#doctor_indication').val($('#doctor_indication').val() + 'Рухові порушення внаслідок органічних уражень ЦНС; '); }
+        };
         if (($('#step7_indication_1').prop('checked') == true) && ($('#step7_indication_2').prop('checked') == true) && ($('#step7_indication_3').prop('checked') == true) && ($('#step7_indication_1').prop('checked') == true)) {
             go_to(8)
         } else {

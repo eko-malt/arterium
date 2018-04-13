@@ -1,23 +1,27 @@
-.row.img_pd.valign-wrapper
+//.row.img_pd.valign-wrapper
   .col.s5.center = image_tag 'mediatorn_title_font.png', width: '430px'
   .col.s2
   .col.s5.center = image_tag 'arterium.png', width: '400px'
 
-.center.medi-img = image_tag 'mediatorn_box.png', width: '500px'
-.container
-  h3.center.mediatorn-title Медіаторн -
-  h3.center це ефективність оригінального іпідакрину
-  h3.center за доступною ціною
+= image_tag 'bg.jpg', class: 'bg'
 
-.thank_you
-  h3.center = t('thank_you')
-
-  br
-  br
-  br
+.main-message
   .row
-    .col.s12.center
-      = link_to t('to_main'), root_path, class: 'waves-effect waves-green btn-large'
+    h3.center = image_tag 'mediatorn_title_font.png', width: '430px'
+    h3.center це ефективність оригінального іпідакрину
+    h3.center за доступною ціною
 
-= image_tag 'bottom-left.jpg', class: 'img-bottom img-bm-left'
-= image_tag 'bottom-right.jpg', class: 'img-bottom img-bm-right'
+  .center.medi-img = image_tag 'mediatorn_box.png', width: '700px'
+
+.row
+  .thank_you
+    h2.center = t('thank_you1')
+    h2.center = t('thank_you2')
+    br
+    br
+    .row
+      .col.s12.center
+        = link_to t('to_main'), root_path, class: 'waves-effect waves-green btn-large'
+//
+  = image_tag 'bottom-left.jpg', class: 'img-bottom img-bm-left'
+  = image_tag 'bottom-right.jpg', class: 'img-bottom img-bm-right'

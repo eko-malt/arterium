@@ -50,6 +50,7 @@
           input#mediatorn_this_is_3 name="step5_mediatorn" type="checkbox"
           label for="mediatorn_this_is_3"
             |Холіну альфосцерат
+      = f.hidden_field :mediatorn
     //.row
       .col.s4 = f.input :mediatorn, as: :radio_buttons, collection: ['Іпідакрину гідрохлориду', 'Цитиколіну', 'Холіну альфосцерат'], label: false
     .row
@@ -71,6 +72,7 @@
           input#step6_effect_3 type="checkbox"
           label for="step6_effect_3"
             |Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків
+    = f.hidden_field :effects
     //.row
       .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром''язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row
@@ -96,6 +98,7 @@
           input#step7_indication_4 type="checkbox"
           label for="step7_indication_4"
             |Рухові порушення внаслідок органічних уражень ЦНС
+    = f.hidden_field :indication
         //.col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row
       .col.s12 = button_tag t('form.next_answer'), type: :button,  id: '7to8', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step8' }
