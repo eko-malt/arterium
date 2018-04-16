@@ -100,8 +100,14 @@ ready = function() {
         setTimeout(function(){ $('#step' + step).show('slide',{direction:'right'},500);}, 200);
     }
 
+    function hide_this_fuckin_keyboard() {
+        $('#mlkeyboard').slideUp(300);
+        $('.mlkeyboard_eng').slideUp(300);
+    }
+
     // name to specialization
     $('#2to3').click(function() {
+        hide_this_fuckin_keyboard();
         if (($('#doctor_s_name').val().length > 3) && ($('#doctor_f_name').val().length > 3)) {
             go_to(3)
         } else {
@@ -111,6 +117,7 @@ ready = function() {
 
     // spec to city
     $('#3to4').click(function() {
+        hide_this_fuckin_keyboard()
         if ($('#spec_3').prop('checked') == true) {
             if ($('#doctor_spec_other').val().length > 3) {
                 go_to(4);
@@ -128,6 +135,7 @@ ready = function() {
 
     // city to this is
     $('#4to5').click(function() {
+        hide_this_fuckin_keyboard()
         if ($('#doctor_city').val().length > 3) {
             go_to(5)
         } else {
@@ -137,6 +145,7 @@ ready = function() {
 
     // this is to effects
     $('#5to6').click(function() {
+        hide_this_fuckin_keyboard()
         if ($('#doctor_mediatorn').val() == '') {
             if ($('#mediatorn_this_is_1').prop('checked') == true) { $('#doctor_mediatorn').val($('label[for=mediatorn_this_is_1]').html()); }
             if ($('#mediatorn_this_is_2').prop('checked') == true) { $('#doctor_mediatorn').val($('label[for=mediatorn_this_is_2]').html()); }
@@ -158,6 +167,7 @@ ready = function() {
 
     // effects to indications
     $('#6to7').click(function() {
+        hide_this_fuckin_keyboard()
         if ($('#doctor_effects').val() == '') {
             if ($('#step6_effect_1').prop('checked') == true) { $('#doctor_effects').val($('label[for=step6_effect_1]').html()); }
             if ($('#step6_effect_2').prop('checked') == true) { $('#doctor_effects').val($('#doctor_effects').val() + '; ' + $('label[for=step6_effect_2]').html()); }
@@ -179,6 +189,7 @@ ready = function() {
 
     // indications to your indications
     $('#7to8').click(function() {
+        hide_this_fuckin_keyboard()
         if ($('#doctor_indication').val() == '') {
             if ($('#step7_indication_1').prop('checked') == true) { $('#doctor_indication').val($('#doctor_indication').val() + 'Моно- і полінейропатії, полірадикулопатії різної етіології; '); }
             if ($('#step7_indication_2').prop('checked') == true) { $('#doctor_indication').val($('#doctor_indication').val() + 'Міастенія та міастенічний синдром; '); }

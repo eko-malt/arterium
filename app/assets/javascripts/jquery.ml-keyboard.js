@@ -342,6 +342,7 @@ Keyboard.prototype.hideKeyboard = function() {
         this.isVisible = false;
         this.$keyboard.slideUp(this.options.closeSpeed);
         console.log('hide');
+        console.log(this);
         $('.main').removeClass('body-container');
     }
 };

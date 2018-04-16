@@ -24,7 +24,7 @@
           label for="spec_3"
             = f.input :spec_other, label: false, placeholder: t('doctor.spec_other'), input_html: { class: 'ml_ukr' }
             = f.hidden_field :spec
-    .row
+    .row.moveUp
       .col.s12 = button_tag t('form.next_answer'), type: :button, id: '3to4', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step4' }
   .block_form#step4
     .row
@@ -130,4 +130,5 @@
         = f.hidden_field :your_indication
         //.row
           .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
-    = f.submit t('form.next_answer'), class: 'waves-effect waves-light btn-large right'
+    .row.moveUp.send_form
+      = f.submit t('form.next_answer'), id: 'send_form', class: 'waves-effect waves-light btn-large right'
