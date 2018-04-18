@@ -15,37 +15,17 @@ body {
   background-color: #ffffff;
 }
 
+.main { overflow: hidden; }
+
 .btn, .swal-button { background-color: #5090cd !important; }
 .btn:hover, .btn:focus { background-color: #7d7e82; }
 
-.main-page, .main-page2  {
-  background-repeat: no-repeat;
-  height: 768px;
-}
-
-.main-page {
-  background-image: url('bg_dance.jpg');
-}
-.main-page2 {
-  background-image: url('start2r.jpg');
-}
+.start_bg { width: 99%; }
 
 .main-page a {
   position: absolute;
   left: 50px;
   top: 50px;
-}
-
-.main-page2 a {
-  position: absolute;
-  left: 50px;
-  top: 50px;
-}
-
-#change_background {
-  position: absolute;
-  left: 50px;
-  bottom: 50px;
 }
 
 .body-container {
@@ -65,7 +45,10 @@ body {
 
 #step3, #step4, #step5, #step6, #step7, #step8, .thank_you { display: none; }
 
+#step2, #step4 { margin-top: 50px; }
+
 .moveUp { margin-top: -90px !important; }
+
 .send_form {
   position: absolute;
   right: 87px;
@@ -78,28 +61,8 @@ body {
   padding: 20px;
 }
 
-#step8 {
-  margin: -40px;
-  width: 80%;
-}
-
 .doctor_spec_other { margin-top: -14px; }
-.doctor_spec_other input { font-size: x-large !important; }
-.doctor_indication_other { margin-top: -10px; }
-.doctor_indication_other input { font-size: x-large !important; }
-
-#mlkeyboard-tab {
-  visibility: hidden;
-  margin-left: -2% !important;
-}
-#mlkeyboard-capslock {
-  visibility: hidden;
-  margin-left: 1% !important;
-}
-#mlkeyboard-return { visibility: hidden; }
-#mlkeyboard-left-shift {
-  margin-left: 3% !important;
-}
+.doctor_spec_other input, .doctor_indication_other input, #doctor_city, #step2 input { font-size: x-large !important; }
 
 .input-field label:not(.label-icon).active {
   transform: translateY(-25px) scale(0.8) !important;
@@ -181,6 +144,14 @@ input[type=text] {
 
 }
 
+@media screen and (min-width: 1400px) {
+  .bg { margin-top: 200px; }
+  .block_form { top: 200px; }
+  #step4, #step2 { margin-top: 5%; }
+}
+
+
+
 /* numpad */
 
 span#number2dial {
@@ -216,10 +187,22 @@ button.numpad, .backspace {
 .red_text { color: #B00100; }
 
 /*
- *
  * ml-keyaboard
- *
  */
+
+
+#mlkeyboard-tab {
+  visibility: hidden;
+  margin-left: -2% !important;
+}
+#mlkeyboard-capslock {
+  visibility: hidden;
+  margin-left: 1% !important;
+}
+#mlkeyboard-return { visibility: hidden; }
+#mlkeyboard-left-shift {
+  margin-left: 3% !important;
+}
 
 div#mlkeyboard {
   font-family: Tahoma, Arial, sans-serif;
@@ -244,17 +227,6 @@ div#mlkeyboard ul {
   -ms-user-select: none
 }
 
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul {
-    width: 100%;
-    height: 290px;
-    margin: 0 auto;
-    padding: 0px;
-    padding-left: 60px;
-    border-radius: 5px 5px 0 0
-  }
-}
-
 div#mlkeyboard ul li {
   float: left;
   margin: 0 0 0.5% 0.5%;
@@ -265,15 +237,6 @@ div#mlkeyboard ul li {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   cursor: pointer
-}
-
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul li {
-    width: 6.5%;
-    height: 50px;
-    line-height: 50px;
-    margin: 2px
-  }
 }
 
 div#mlkeyboard ul li.active {
@@ -292,74 +255,11 @@ div#mlkeyboard ul #mlkeyboard-left-shift {
   clear: left
 }
 
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul #mlkeyboard-backspace {
-    width: 100px
-  }
-}
-
-div#mlkeyboard ul #mlkeyboard-tab {
-  width: 7%
-}
-
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul #mlkeyboard-tab {
-    width: 65px
-  }
-}
-
-div#mlkeyboard ul #mlkeyboard-capslock {
-  width: 12%
-}
-
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul #mlkeyboard-capslock {
-    width: 75px
-  }
-}
-
-div#mlkeyboard ul #mlkeyboard-return {
-  width: 8%
-}
-
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul #mlkeyboard-return {
-    width: 76px
-  }
-}
-
-div#mlkeyboard ul #mlkeyboard-left-shift {
-  width: 14%
-}
-
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul #mlkeyboard-left-shift {
-    width: 100px
-  }
-}
-
-div#mlkeyboard ul #mlkeyboard-right-shift {
-  width: 12%
-}
-
-@media screen and (min-width: 540px) {
-  div#mlkeyboard ul #mlkeyboard-right-shift {
-    width: 100px;
-    margin-right: 0
-  }
-}
 
 div#mlkeyboard ul #mlkeyboard-space {
   clear: left;
   width: 65%;
   margin-left: 16%;
-}
-
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul #mlkeyboard-space {
-    width: 65%;
-    margin-left: 16%;
-  }
 }
 
 div#mlkeyboard ul.mlkeyboard-modifications {
@@ -370,14 +270,79 @@ div#mlkeyboard ul.mlkeyboard-modifications {
   padding: 8px
 }
 
-@media screen and (min-width: 700px) {
-  div#mlkeyboard ul.mlkeyboard-modifications {
-    height: 46px
+div#mlkeyboard ul #mlkeyboard-capslock { width: 12% }
+div#mlkeyboard ul #mlkeyboard-return { width: 8% }
+div#mlkeyboard ul #mlkeyboard-left-shift { width: 14% }
+div#mlkeyboard ul #mlkeyboard-right-shift { width: 12% }
+
+@media screen and (max-width: 1400px) {
+  div#mlkeyboard ul #mlkeyboard-tab { width: 65px; }
+  div#mlkeyboard ul #mlkeyboard-capslock { width: 75px; }
+  div#mlkeyboard ul #mlkeyboard-return { width: 76px; }
+  div#mlkeyboard ul #mlkeyboard-left-shift { width: 100px; }
+  div#mlkeyboard ul.mlkeyboard-modifications { height: 46px; }
+  div#mlkeyboard ul #mlkeyboard-backspace { width: 100px; }
+
+  div#mlkeyboard ul #mlkeyboard-space {
+    width: 65%;
+    margin-left: 13%;
+  }
+
+  div#mlkeyboard ul li {
+    width: 6.5%;
+    height: 50px;
+    line-height: 50px;
+    margin: 2px
+  }
+
+  div#mlkeyboard ul {
+    width: 100%;
+    height: 290px;
+    margin: 0 auto;
+    padding: 0px;
+    padding-left: 6%;
+    border-radius: 5px 5px 0 0
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  div#mlkeyboard ul #mlkeyboard-tab { width: 65px; }
+  div#mlkeyboard ul #mlkeyboard-capslock { width: 75px; }
+  div#mlkeyboard ul #mlkeyboard-return { width: 76px; }
+  div#mlkeyboard ul #mlkeyboard-left-shift { width: 100px; }
+  div#mlkeyboard ul.mlkeyboard-modifications { height: 46px; }
+  div#mlkeyboard ul #mlkeyboard-backspace { width: 100px; }
+
+  div#mlkeyboard ul #mlkeyboard-space {
+    width: 65%;
+    margin-left: 13%;
+  }
+
+  div#mlkeyboard ul li {
+    width: 6.5%;
+    height: 70px;
+    line-height: 70px;
+    margin: 2px
+  }
+
+  div#mlkeyboard ul {
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+    padding: 0px;
+    padding-left: 6%;
+    border-radius: 5px 5px 0 0
+  }
+}
+
+
+@media screen and (min-width: 540px) {
+  div#mlkeyboard ul #mlkeyboard-right-shift {
+    width: 100px;
+    margin-right: 0
   }
 }
 
 /*
- *
  * ml-keyboard finish
- *
  */

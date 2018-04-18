@@ -28,11 +28,12 @@
       .col.s12 = button_tag t('form.next_answer'), type: :button, id: '3to4', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step4' }
   .block_form#step4
     .row
-      .col.s3
+      .col.s2
       .col.s6 = f.input :city, label: t('doctor.city'), placeholder: '', input_html: { class: 'ml_ukr' }
       .col.s3
     .row
-      .col.s12 = button_tag t('form.next_step'), type: :button, id: '4to5', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step5' }
+      .col.s10 = button_tag t('form.next_step'), type: :button, id: '4to5', class: 'waves-effect waves-light btn-large right', data: { next_step: 'step5' }
+      .col.s2
   .block_form#step5
     .row
       h4 = t('form.step5')
@@ -108,27 +109,21 @@
     .row
       .col.s12
         .row
-          input#step8_indication_1 type="checkbox"
+          input#step8_indication_1 type="checkbox" name="step8_indication"
           label for="step8_indication_1"
-            |Моно- і полінейропатії, полірадикулопатії різної етіології
+            |Дорівнює вартості  оригінального іпідакрину
         .row
-          input#step8_indication_2 type="checkbox"
+          input#step8_indication_2 type="checkbox" name="step8_indication"
           label for="step8_indication_2"
-            |Міастенія та міастенічний синдром
+            |Вдвічі доступніша за  оригінальний іпідакрин
         .row
-          input#step8_indication_3 type="checkbox"
+          input#step8_indication_3 type="checkbox" name="step8_indication"
           label for="step8_indication_3"
-            |Ураження ЦНС, бульбарні порушення
-        .row
-          input#step8_indication_4 type="checkbox"
-          label for="step8_indication_4"
-            |Рухові порушення внаслідок органічних уражень ЦНС
-        .row
-          input#step8_indication_5 type="checkbox"
-          label for="step8_indication_5"
-            = f.input :indication_other, label: false, input_html: {class: 'ml_ukr'}, placeholder: t('doctor.indication_other')
+            |На 20% доступніша за оригінальний іпідакрин
         = f.hidden_field :your_indication
+    .row
+      .col.s12 = button_tag t('form.next_answer'), type: :button, id: '8toFinish', class: 'waves-effect waves-light btn-large right'
         //.row
           .col.s4 = f.collection_check_boxes :effects, ['Покращує та стимулює проведення імпульсу в нервовій системі та покращує нейром' 'язову передачу', 'Посилює скорочення гладкої мускулатури', 'Відновлює проведення імпульсу в периферичній нервовій системі, порушеного внаслідок впливу: травм, запалень, дії місцевих анестетиків']
     .row.moveUp.send_form
-      = f.submit t('form.next_answer'), id: 'send_form', class: 'waves-effect waves-light btn-large right'
+      = f.submit t('form.next_answer'), id: 'send_form', class: 'waves-effect waves-light btn-large right disabled'
