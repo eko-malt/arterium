@@ -8,6 +8,17 @@
 
 var ready;
 ready = function() {
+
+    document.oncontextmenu = RightMouseDown;
+    document.onmousedown = mouseDown;
+
+    function mouseDown(e) {
+        if (e.which==3) { //righClick
+            return false;
+        }
+    }
+    function RightMouseDown() { return false;}
+
     Materialize.updateTextFields();
     $('select').material_select();
 
