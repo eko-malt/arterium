@@ -259,8 +259,8 @@ ready = function() {
         } else {
             swal('Вартість однієї упаковки Медіаторну вдвічі доступніша за оригінальний іпідакрин').then((value) => {
                 $('label[for=step8_indication_2]').addClass('green_text');
-                $('label[for=step8_indication_1]').addClass('red_text');
-                $('label[for=step8_indication_3]').addClass('red_text');
+                $('label[for=step8_indication_1]').removeClass('red_text');
+                $('label[for=step8_indication_3]').removeClass('red_text');
                 $('#step8_indication_1').prop('checked', false);
                 $('#step8_indication_2').prop('checked', true);
                 $('#step8_indication_3').prop('checked', false);
