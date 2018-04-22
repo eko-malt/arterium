@@ -250,8 +250,12 @@ ready = function() {
     });
 
     $('#8toFinish').click(function() {
+        if ($('#doctor_your_indication').val() == '') {
+            if ($('#step8_indication_1').prop('checked') == true) { $('#doctor_your_indication').val($('label[for=step8_indication_1]').html()); }
+            if ($('#step8_indication_2').prop('checked') == true) { $('#doctor_your_indication').val($('label[for=step8_indication_2]').html()); }
+            if ($('#step8_indication_3').prop('checked') == true) { $('#doctor_your_indication').val($('label[for=step8_indication_3]').html()); }
+        };
         if ($('#step8_indication_2').prop('checked') == true) {
-            $('#doctor_your_indication').val('Вдвічі доступніша за  оригінальний іпідакрин');
             if ($('#spec_1').prop('checked') == true) { $('#doctor_spec').val('Невролог стаціонару'); }
             if ($('#spec_2').prop('checked') == true) { $('#doctor_spec').val('Невролог поліклініки'); }
             if ($('#spec_3').prop('checked') == true) { $('#doctor_spec').val($('#doctor_spec_other').val()); }
